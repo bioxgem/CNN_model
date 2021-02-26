@@ -1,0 +1,71 @@
+Centos version
+-------------------------------------------------
+Operating System: Ubuntu 16.04.7 LTS
+Kernel: Linux 4.15.0-132-generic
+Architecture: x86-64
+-------------------------------------------------
+
+Python version
+-------------------------------------------------
+Python version: 3.7.4
+tensorflow version: 2.4.1
+-------------------------------------------------
+
+************************************************************************
+Step-1. 1_ShuffleFileOrder_and_GenerateNpyFile.py
+************************************************************************
+Purpose:
+This program is used to generate the images (.npy files) of 2D representation (i.e., protein-protein interaction network).
+(If the images (.npy files) have already prepared, the user can ignore this step.)
+
+Example Usage (Linux):
+$ python3.7 1_ShuffleFileOrder_and_GenerateNpyFile.py ./program_1/training_samples/ ./program_1/output/Example_training_1228_TCGA_samples
+$ python3.7 1_ShuffleFileOrder_and_GenerateNpyFile.py ./program_1/validation_samples/ ./program_1/output/Example_validation_4908_TCGA_samples
+
+Input:
+argv[1]. Please input the directory path of training and validation samples
+Example: "./program_1/training_samples/" (AND "./program_1/validation_samples/" for validation set)
+
+argv[2]. The output name for .npy output file
+Example: "./program_1/output/Example_training_1228_TCGA_samples" (AND "./program_1/output/Example_validation_4908_TCGA_samples" for validation set)
+
+************************************************************************
+Step-2. 2_Develop_CNN_model.py
+************************************************************************
+Purpose:
+This program is used to construct CNN model with training set
+
+Example Usage (Linux):
+$ python3.7 2_Develop_CNN_model.py ./program_1/output/Example_training_1228_TCGA_samples.npy ./program_1/output/Example_training_1228_TCGA_samples_label.npy ./program_2/output/Example_training_1228_TCGA_samples
+
+Input:
+argv[1]. Please input the training images (.npy file)
+Example: "./program_1/output/Example_training_1228_TCGA_samples.npy"
+
+argv[2]. Please input the labels of training samples (*_label.npy)
+Example: "./program_1/output/Example_training_1228_TCGA_samples_label.npy"
+
+argv[3]. The output name for CNN model
+Example: "./program_2/output/Example_training_1228_TCGA_samples"
+
+************************************************************************
+Step-3. 3_ModelValidation_with_IndependentSets.py
+************************************************************************
+Purpose:
+This program is used to test the model accuracy by using validation set, and generate confusion matrix
+
+Example Usage (Linux):
+$ python3.7 3_ModelValidation_with_IndependentSets.py ./program_1/output/Example_validation_4908_TCGA_samples.npy ./program_1/output/Example_validation_4908_TCGA_samples_label.npy ./program_1/output/Example_validation_4908_TCGA_samples_title.npy ./program_2/output/Example_training_1228_TCGA_samples.save
+
+Input:
+argv[1]. Please input the validation images (.npy file)
+Example: "./program_1/output/Example_validation_4908_TCGA_samples.npy"
+
+argv[2]. Please input the labels of validation samples (*_label.npy)
+Example: "./program_1/output/Example_validation_4908_TCGA_samples_label.npy"
+
+argv[3]. Please input the titles of validation samples (*_label.npy)
+Example: "./program_1/output/Example_validation_4908_TCGA_samples_title.npy"
+
+argv[4]. Please input the name of training model
+Example: "./program_2/output/Example_training_1228_TCGA_samples.save"
