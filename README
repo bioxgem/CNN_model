@@ -67,7 +67,7 @@ Example: "./program_1/output/Example_validation_4908_TCGA_samples.npy"
 argv[2]. Please input the labels of validation samples (*_label.npy)
 Example: "./program_1/output/Example_validation_4908_TCGA_samples_label.npy"
 
-argv[3]. Please input the titles of validation samples (*_label.npy)
+argv[3]. Please input the titles of validation samples (*_title.npy)
 Example: "./program_1/output/Example_validation_4908_TCGA_samples_title.npy"
 
 argv[4]. Please input the name of training model
