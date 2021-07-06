@@ -1,5 +1,6 @@
-The completed example samples please visit this website to download: 
-http://bioxgem.life.nctu.edu.tw/bioxgem/downloads/Convolutional-neural-network-for-human-cancer-types-prediction.zip
+The 6,136 smaple files (input data) and established CNN model of this study were uploaded in GitHub directory "/Complete example files and model results/".
+
+The user can develop the their own prediction model with three source codes step by step.
 
 Centos version
 -------------------------------------------------
